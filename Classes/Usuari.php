@@ -25,7 +25,11 @@
             $this->data_prestec = $data_prestec;
 		}
 
-        
+        public function getIdUser(){
+            return $this-> idU;
+        }
+
+
 
     }
 

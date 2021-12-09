@@ -9,9 +9,9 @@
             for($i = 0 ; $i < count($datos) ; $i++){
                 if($datos[5]==$_POST["usuari"] && $datos[6]==$_POST["ctsnya"]){
                     session_start();
-                    $usuario1 = new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
+                    $_SESSION["check_user"]= new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
+                    //session es una array que contiene este objeto como un parametro. 
                     echo "Has entrat en la sessió";
-                    $_SESSION["check_user"]=$usuario1;
                     break;
                 }
             }
@@ -21,10 +21,26 @@
 ?>
 
 <html>
+    <head>
+        <style>
+            .lateral{
+                float:right;
+                border: 2px solid red;
+                background-color: #f5c87a;
+                padding: 5px;
+                line-height: 1.8;
+            }
+        </style>
+    </head>
     <body>
         <?php
-            if(isset($_SESSION["check_user"])){
-                echo "<div>AQUI VA LO DE LA DERECHA</div>";
+            if(isset($_SESSION["check_user"])){ //si un usuario es instanciado en la sesion.
+                echo 
+                "<div class='lateral'> 
+                <b>ID de sessió:</b> " .session_id()."<br>".
+                "<b>ID d'Usuari: </b>".$_SESSION["check_user"] -> getIdUser()."<br>".
+                "<input type='button' value='Tanca sessió'>".
+                "</div>";
                 $in_user = file_get_contents("inusuaris.html");
                 echo $in_user;
             }
