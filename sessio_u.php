@@ -5,7 +5,7 @@
     $fitxer = fopen($user_file,"r") or die ("No s'ha pogut crear fitxer");
 
     if($fitxer !==FALSE){ //si el archivo existe.
-        while (($datos = fgetcsv($fitxer,",")) !== FALSE){ //devuelve un array indexado 
+        while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){ //devuelve un array indexado 
             for($i = 0 ; $i < count($datos) ; $i++){
                 if($datos[5]==$_POST["usuari"] && $datos[6]==$_POST["ctsnya"]){
                     session_start();
@@ -39,7 +39,7 @@
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
                 "<b>ID d'Usuari: </b>".$_SESSION["check_user"] -> getIdUser()."<br>".
-                "<input type='button' value='Tanca sessió'>".
+                "<a href='logout.php'>Cerrar Sesión</a>".
                 "</div>";
                 $in_user = file_get_contents("inusuaris.html");
                 echo $in_user;

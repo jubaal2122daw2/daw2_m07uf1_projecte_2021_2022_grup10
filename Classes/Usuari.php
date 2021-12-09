@@ -29,6 +29,9 @@
             return $this-> idU;
         }
 
+        public function getNomUser(){
+            return $this-> nomU;
+        }
 
 
     }
