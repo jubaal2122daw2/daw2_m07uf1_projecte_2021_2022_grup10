@@ -49,33 +49,34 @@
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
                 "<b>ID d'Usuari: </b>".$_SESSION["check_user"] -> getIdUser()."<br>".
-                "<a href='logout.php'>Cerrar Sesión</a>".
+                "<a href='logout.php'>Tancar sessió</a>".
                 "</div>";
                 $in_user = file_get_contents("inusuaris.html");
                 echo $in_user;
             }
-            if(isset($_SESSION["check_biblio"])){ //si un usuario es instanciado en la sesion.
+            if(isset($_SESSION["check_biblio"])){
                 echo 
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
                 "<b>ID d'Usuari: </b>".$_SESSION["check_biblio"] -> getIdTreb()."<br>".
-                "<a href='logout.php'>Cerrar Sesión</a>".
+                "<a href='logout.php'>Tancar sessió</a>".
                 "</div>";
                 $in_biblio = file_get_contents("inbibliotecaris.html");
                 echo $in_biblio;
             }
-            if(!isset($_SESSION["check_user"])&&!isset($_SESSION["check_biblio"])&&isset($_SESSION["check_biblioc"])){ //si un usuario es instanciado en la sesion.
+            if(isset($_SESSION["check_biblioc"])){ 
                 echo 
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
                 "<b>ID d'Usuari: </b>".$_SESSION["check_biblioc"] -> getIdCap()."<br>".
-                "<a href='logout.php'>Cerrar Sesión</a>".
+                "<a href='logout.php'>Tancar sessió</a>".
                 "</div>";
                 $in_biblioc = file_get_contents("inbibliotecariscap.html");
                 echo $in_biblioc;
             }
             elseif(!isset($_SESSION["check_user"])&&!isset($_SESSION["check_biblio"])&&!isset($_SESSION["check_biblioc"])){
                 echo "Usuari o contrassenya incorrectes";
+
             }
         ?>
     </body>

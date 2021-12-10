@@ -1,5 +1,5 @@
 <?php
-
+//cambiar clases, dejar solo persona, bibliotecarios y usuarios.
 class Bibliotecari{
 
     private $nomB;
@@ -37,11 +37,11 @@ class Cap extends Bibliotecari{
     }
 
     public function getIdCap(){
-        return $this-> idU;
+        return $this-> idB;
     }
 
     public function getNomCap(){
-        return $this-> nomU;
+        return $this-> nomB;
     }
 }
 
