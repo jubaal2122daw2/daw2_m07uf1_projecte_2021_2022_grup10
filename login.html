@@ -4,11 +4,14 @@
 		<title>
 			BIBLIOTECA TERRA ALTA
 		</title>
+		<link href='style.css'rel='stylesheet' type='text/css'>
 	</head>
 		<body>
-			<form action="./sessio_u.php" method="POST">
-				Indica el nom d'usuari: <input type="text" name="usuari"><br>
-				Indica la contrasenya: <input type="password" name="ctsnya"><br>
+			<form class="login" action="./sessio_u.php" method="POST">
+				<label for="fname">Indica el nom d'usuari:</label><br>
+				<input type="text" name="usuari"><br>
+				<label for="fname">Indica la contrasenya:</label><br>
+				<input type="password" name="ctsnya"><br>
 				<input type="submit" value="Envia"/>
 			</form>
 		</body>

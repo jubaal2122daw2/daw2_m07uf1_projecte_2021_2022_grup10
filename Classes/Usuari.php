@@ -17,7 +17,7 @@ class Usuari extends Persona{
         $this->data_prestec = $data_prestec;
         }
 
-        public function verInfoUser(){
+        public function verInfo(){
             return"
                 <tr>
                     <td>{$this->nomCognom}</td>

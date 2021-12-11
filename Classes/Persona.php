@@ -17,7 +17,8 @@ abstract class Persona{
         return $this-> nomCognom;
     }
 
-    //hacer alguna funcion abstracta para que sea interface
+    abstract function verInfo();
+
 }
 
 ?>

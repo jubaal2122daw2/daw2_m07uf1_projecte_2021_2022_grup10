@@ -1,9 +1,9 @@
 <?php
-include_once("Classes/Usuari.php");
+include_once("Classes/Bibliotecari.php");
 
 session_start();
 
-if(!isset($_SESSION["check_user"])){
+if(!isset($_SESSION["check_biblio"])){
     header("Location: login.html");
 }
 echo"
@@ -20,11 +20,12 @@ echo"
                     <th>Telèfon</th>
                     <th>ID</th>
                     <th>Contrasenya</th>
-                    <th>Prestat(S/N)</th>
-                    <th>ISBN</th>
-                    <th>Data Prèstec</th>
+                    <th>S.Social</th>
+                    <th>Data Contracte</th>
+                    <th>Salari</th>
+                    <th>Cap (S/N)</th>
                 </tr>".
-                $_SESSION['check_user']-> verInfo();"
+                $_SESSION['check_biblio']-> verInfo();"
             </table>
         </body>
     </html>
