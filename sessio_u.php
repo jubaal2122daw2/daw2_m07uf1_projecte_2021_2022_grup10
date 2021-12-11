@@ -1,6 +1,6 @@
 <?php
-    include("Classes/Usuari.php");
-    include("Classes/Bibliotecari.php");
+    include_once("Classes/Usuari.php");
+    include_once("Classes/Bibliotecari.php");
 
     $user_file = "./ficheros/usuaris.csv";
     $fitxer = fopen($user_file,"r") or die ("No s'ha pogut crear fitxer");
@@ -8,19 +8,19 @@
     if($fitxer !==FALSE){ //si el archivo existe.
         while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){ //devuelve un array indexado 
             for($i = 0 ; $i < count($datos) ; $i++){
-                if($datos[5]==$_POST["usuari"] && $datos[6]==$_POST["ctsnya"]){
-                    $lastChar = substr($datos[5], -1);
+                if($datos[4]==$_POST["usuari"] && $datos[5]==$_POST["ctsnya"]){
+                    $lastChar = substr($datos[4], -1);
                     if($lastChar=="U"){
                         session_start();
-                        $_SESSION["check_user"]= new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]); 
+                        $_SESSION["check_user"]= new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8]); 
                     }//session es una array que contiene este objeto como un parametro. 
                     if($lastChar=="B"){
                         session_start();
-                        $_SESSION["check_biblio"]= new Treballador($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10],$datos[11]);
+                        $_SESSION["check_biblio"]= new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10]);
                     }
                     if($lastChar=="C"){
                         session_start();
-                        $_SESSION["check_biblioc"]= new Cap($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10],$datos[11]);
+                        $_SESSION["check_biblioc"]= new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9],$datos[10]);
                     }
                     break;
                 }
@@ -58,7 +58,7 @@
                 echo 
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
-                "<b>ID d'Usuari: </b>".$_SESSION["check_biblio"] -> getIdTreb()."<br>".
+                "<b>ID d'Usuari: </b>".$_SESSION["check_biblio"] -> getIdUser()."<br>".
                 "<a href='logout.php'>Tancar sessió</a>".
                 "</div>";
                 $in_biblio = file_get_contents("inbibliotecaris.html");
@@ -68,7 +68,7 @@
                 echo 
                 "<div class='lateral'> 
                 <b>ID de sessió:</b> " .session_id()."<br>".
-                "<b>ID d'Usuari: </b>".$_SESSION["check_biblioc"] -> getIdCap()."<br>".
+                "<b>ID d'Usuari: </b>".$_SESSION["check_biblioc"] -> getIdUser()."<br>".
                 "<a href='logout.php'>Tancar sessió</a>".
                 "</div>";
                 $in_biblioc = file_get_contents("inbibliotecariscap.html");
