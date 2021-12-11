@@ -2,3 +2,25 @@
     border-color: black;
     margin:auto ;
 }
+.lateral{
+    float:right;
+    border: 2px solid red;
+    background-color: #f5c87a;
+    padding: 5px;
+    line-height: 1.8;
+}
+
+.taula {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+}

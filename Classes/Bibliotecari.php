@@ -8,7 +8,7 @@ class Bibliotecari extends Persona{
     public $cap;
 
     public function __construct($nomCognom,$adreca,$email,$telefon,$id,$pass,$sSocial,$data_contracte,$salari,$cap){
-        $this->nom = $nomCognom;
+        $this->nomCognom = $nomCognom;
         $this->adreca = $adreca;
         $this->email = $email;
         $this->telefon = $telefon;

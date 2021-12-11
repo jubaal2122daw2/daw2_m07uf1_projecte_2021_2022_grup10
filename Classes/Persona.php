@@ -14,9 +14,10 @@ abstract class Persona{
     }
 
     public function getNomUser(){
-        return $this-> nom;
+        return $this-> nomCognom;
     }
 
+    //hacer alguna funcion abstracta para que sea interface
 }
 
 ?>

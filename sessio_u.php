@@ -32,45 +32,27 @@
 
 <html>
     <head>
-        <style>
-            .lateral{
-                float:right;
-                border: 2px solid red;
-                background-color: #f5c87a;
-                padding: 5px;
-                line-height: 1.8;
-            }
-        </style>
     </head>
     <body>
         <?php
             if(isset($_SESSION["check_user"])){ //si un usuario es instanciado en la sesion.
-                echo 
-                "<div class='lateral'> 
-                <b>ID de sessió:</b> " .session_id()."<br>".
-                "<b>ID d'Usuari: </b>".$_SESSION["check_user"] -> getIdUser()."<br>".
-                "<a href='logout.php'>Tancar sessió</a>".
-                "</div>";
+                require 'div_lateral.php';
+                $aux = "check_user";
+                echo div_lateral($aux);
                 $in_user = file_get_contents("inusuaris.html");
                 echo $in_user;
             }
             if(isset($_SESSION["check_biblio"])){
-                echo 
-                "<div class='lateral'> 
-                <b>ID de sessió:</b> " .session_id()."<br>".
-                "<b>ID d'Usuari: </b>".$_SESSION["check_biblio"] -> getIdUser()."<br>".
-                "<a href='logout.php'>Tancar sessió</a>".
-                "</div>";
+                require 'div_lateral.php';
+                $aux = "check_biblio";
+                echo div_lateral($aux);
                 $in_biblio = file_get_contents("inbibliotecaris.html");
                 echo $in_biblio;
             }
             if(isset($_SESSION["check_biblioc"])){ 
-                echo 
-                "<div class='lateral'> 
-                <b>ID de sessió:</b> " .session_id()."<br>".
-                "<b>ID d'Usuari: </b>".$_SESSION["check_biblioc"] -> getIdUser()."<br>".
-                "<a href='logout.php'>Tancar sessió</a>".
-                "</div>";
+                require 'div_lateral.php';
+                $aux = "check_biblioc";
+                echo div_lateral($aux);
                 $in_biblioc = file_get_contents("inbibliotecariscap.html");
                 echo $in_biblioc;
             }
@@ -81,4 +63,3 @@
         ?>
     </body>
 </html>
-
