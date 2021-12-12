@@ -1,4 +1,6 @@
 <?php
+//falta mirar de arreglar los inicios del usuario.
+
     include_once("Classes/Usuari.php");
     include_once("Classes/Bibliotecari.php");
 
@@ -24,6 +26,12 @@
                     }
                     break;
                 }
+                else{ //necesario para el tornar enrere
+                    session_start();
+                    if(!isset($_SESSION["check_user"])&&!isset($_SESSION["check_biblio"])&&!isset($_SESSION["check_biblioc"])){
+                        header("Location: login.html");
+                    }
+                }
             }
         }
     }
@@ -32,6 +40,7 @@
 
 <html>
     <head>
+        <link href='style.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <?php
@@ -57,8 +66,7 @@
                 echo $in_biblioc;
             }
             elseif(!isset($_SESSION["check_user"])&&!isset($_SESSION["check_biblio"])&&!isset($_SESSION["check_biblioc"])){
-                echo "Usuari o contrassenya incorrectes";
-
+                echo "Usuari o contrassenya incorrectes";                
             }
         ?>
     </body>
