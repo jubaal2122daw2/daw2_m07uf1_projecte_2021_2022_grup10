@@ -36,7 +36,7 @@
         }
         fclose($fitxer);
     }
-    else{ //necesario para que funcione el boto tornar enrere.
+    else{ //necesario para que funcione el boto enrere.
         session_start();
         if(!isset($_SESSION["check_user"])&&!isset($_SESSION["check_biblio"])&&!isset($_SESSION["check_biblioc"])){
             header("Location: login.html");

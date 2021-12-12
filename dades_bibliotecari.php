@@ -19,7 +19,7 @@
         echo div_lateral($aux,session_id(),$_SESSION["check_biblio"]->getIdUser(),$_SESSION["check_biblio"]->getNomUser());
     ?>
     <form action='./sessio_u.php' method='GET'>
-        <input type='submit' value='Torna enrere'>
+        <input type='submit' value='Enrere'>
     </form>
     <table class='taula'>
         <tr>

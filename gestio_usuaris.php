@@ -3,7 +3,7 @@
     include_once("Classes/Bibliotecari.php");
 
     session_start();
-    if(!isset($_SESSION["check_biblio"])){
+    if(!isset($_SESSION["check_biblio"])&&!isset($_SESSION["check_biblioc"])){
         header("Location: login.html");
     }
 ?>
@@ -14,12 +14,19 @@
 </head>
     <body>
         <?php 
-            require 'div_lateral.php';
-            $aux = "check_biblio";
-            echo div_lateral($aux,session_id(),$_SESSION["check_biblio"]->getIdUser(),$_SESSION["check_biblio"]->getNomUser());
+            require_once 'div_lateral.php';
+            if(isset($_SESSION["check_biblio"])){
+                $aux = "check_biblio";
+                echo div_lateral($aux,session_id(),$_SESSION["check_biblio"]->getIdUser(),$_SESSION["check_biblio"]->getNomUser());
+            }
+            if(isset($_SESSION["check_biblioc"])){ 
+                $aux = "check_biblioc";
+                echo div_lateral($aux,session_id(),$_SESSION["check_biblioc"]->getIdUser(),$_SESSION["check_biblioc"]->getNomUser());
+            }
         ?>
+        <!-- Boto Enrere -->
         <form action='sessio_u.php' method='GET'>
-            <input type='submit' value='Torna enrere'>
+            <input type='submit' value='Enrere'>
         </form>
         <table class='taula'>
             <tr>
