@@ -1,5 +1,5 @@
 <?php
-    include_once("Classes/Usuari.php");
+    include_once("Classes/Llibre.php");
     include_once("Classes/Bibliotecari.php");
 
     session_start();
@@ -30,40 +30,33 @@
         </form>
         <table class='taula'>
             <tr>
-                <th>Nom</th>
-                <th>Adreça</th>
-                <th>Email</th>
-                <th>Telèfon</th>
-                <th>ID</th>
-                <th>Contrasenya</th>
-                <th>Prestat(S/N)</th>
+                <th>Titol</th>
+                <th>Autor</th>
                 <th>ISBN</th>
+                <th>Prestat(S/N)</th>
                 <th>Data Prèstec</th>
+                <th>ID usuari</th>
             </tr> 
         
         <?php
-            $usuaris = array();
-            $user_file = "./ficheros/usuaris.csv";
-            $fitxer = fopen($user_file,"r") or die ("No s'ha pogut crear fitxer");
+            $llibres = array();
+            $book_file = "./ficheros/llibres.csv";
+            $fitxer = fopen($book_file,"r") or die ("No s'ha pogut crear fitxer");
             if($fitxer !==FALSE){
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
-                $user = new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8]);
-                echo $user -> verInfo();
-                $usuaris[] = $user;
+                $libro = new Llibre($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
+                echo $libro -> verInfoLibro();
+                $llibres[] = $libro;
             }
             fclose($fitxer);
             }
         ?>
         </table>
         <a>Creació</a></br>
-        <form class= 'formulari' action="./creacioU.php" method="POST">
-			Nom<input type="text" name="nom"><br>
-			Cognom <input type="text" name="cognom"><br>
-			Direcció <input type="text" name="direccio"><br>
-			Direcció E-mail <input type="text" name="email"><br>
-			Teléfon <input type="tel" name="telefon"><br>
-			ID usuari <input type="text" name="id"><br>
-			Contrasenya: <input type="password" name="ctsnya"><br>
+        <form class= 'formulari' action="./creacioL.php" method="POST">
+			Titol<input type="text" name="titol"><br>
+			Autor<input type="text" name="autor"><br>
+			ISBN <input type="text" name="isbn"><br>
 			<input type="submit" value="Crea"/>
 		</form>
     </body>

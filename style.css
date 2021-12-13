@@ -6,8 +6,12 @@ body{
 }
 
 .formulari{
-    border-color: black;
-    margin:auto ;
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 6px;
+    background-color: white;
+    color: orange;
+    font-weight: bold;
 }
 .login{
     width: min-content;
@@ -49,4 +53,12 @@ a{
     background-color: white;
     color: orange;
     font-weight: bold;
+}
+div{
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 6px;
+    background-color: white;
+    color: orange;
+    font-weight: bold;  
 }
