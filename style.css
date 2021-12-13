@@ -12,6 +12,10 @@ body{
     background-color: white;
     color: orange;
     font-weight: bold;
+    width: 25%;
+}
+p{
+    font-size: 24px;
 }
 .login{
     width: min-content;
@@ -29,6 +33,7 @@ body{
     padding: 5px;
     line-height: 2;
     height: min-content;
+    color: black;
 }
 
 .taula {
@@ -42,9 +47,6 @@ td, th {
     padding: 8px;
 }
   
-  tr:nth-child(even) {
-    background-color: rgb(160, 133, 107);
-}
 
 a{
     text-decoration: none;

@@ -55,15 +55,23 @@
             }
         ?>
         </table>
-        <a>Creació</a></br>
+        </br>
+        <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioU.php" method="POST">
-			Nom<input type="text" name="nom"><br>
-			Cognom <input type="text" name="cognom"><br>
-			Direcció <input type="text" name="direccio"><br>
-			Direcció E-mail <input type="text" name="email"><br>
-			Teléfon <input type="tel" name="telefon"><br>
-			ID usuari <input type="text" name="id"><br>
-			Contrasenya: <input type="password" name="ctsnya"><br>
+        <p>Creació</p>
+			Nom: </br><input type="text" name="nom"><br>
+			Cognom:</br> <input type="text" name="cognom"><br>
+			Direcció:</br> <input type="text" name="direccio"><br>
+			Direcció E-mail:</br> <input type="text" name="email"><br>
+			Teléfon: </br><input type="tel" name="telefon"><br>
+			ID usuari: </br><input type="text" name="id"><br>
+			Contrasenya:</br> <input type="password" name="ctsnya"><br><br>
+			<input type="submit" value="Crea"/>
+		</form>
+        <!--ELIMINACIÓ-->
+        <form class= 'formulari' action="./eliminacioU.php" method="POST">
+        <p>Eliminació</p>
+			ID: </br><input type="text" name="id"><br>
 			<input type="submit" value="Crea"/>
 		</form>
     </body>

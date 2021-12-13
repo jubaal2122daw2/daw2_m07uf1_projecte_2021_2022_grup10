@@ -51,21 +51,29 @@
             fclose($fitxer);
             }
         ?>
-        </table>
-        <a>Creació</a></br>
+        </table></br>
+        <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioB.php" method="POST">
-			Nom<input type="text" name="nom"><br>
-			Cognom <input type="text" name="cognom"><br>
-			Direcció <input type="text" name="direccio"><br>
-			Direcció E-mail <input type="text" name="email"><br>
-			Teléfon <input type="tel" name="telefon"><br>
-			ID <input type="text" name="id"><br>
-			Contrasenya: <input type="password" name="ctsnya"><br>
-            Número seguretat social: <input type="text" name="social"><br>
-            Data de contracte: <input type="date" name="contracte"><br>
-            Salari: <input type="text" name="salari"><br>
+        <p>Creació</p>
+			Nom:</br><input type="text" name="nom"><br>
+			Cognom: </br><input type="text" name="cognom"><br>
+			Direcció: </br><input type="text" name="direccio"><br>
+			Direcció E-mail: </br><input type="text" name="email"><br>
+			Teléfon: </br><input type="tel" name="telefon"><br>
+			ID: </br><input type="text" name="id"><br>
+			Contrasenya: </br><input type="password" name="ctsnya"><br>
+            Número seguretat social: </br><input type="text" name="social"><br>
+            Data de contracte: </br><input type="date" name="contracte"><br>
+            Salari: </br><input type="text" name="salari"><br></br>
 			<input type="submit" value="Crea"/>
 		</form>
+        <!--ELIMINACIÓ-->
+        <form class= 'formulari' action="./eliminacioB.php" method="POST">
+        <p>Eliminació</p>
+			ID: </br><input type="text" name="id"><br>
+			<input type="submit" value="Crea"/>
+		</form>
+        
         
     </body>
 </html>

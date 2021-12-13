@@ -52,11 +52,19 @@
             }
         ?>
         </table>
-        <a>Creació</a></br>
+        </br>
+        <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioL.php" method="POST">
-			Titol<input type="text" name="titol"><br>
-			Autor<input type="text" name="autor"><br>
-			ISBN <input type="text" name="isbn"><br>
+        <p>Creació</p>
+			Titol:</br><input type="text" name="titol"><br>
+			Autor:</br><input type="text" name="autor"><br>
+			ISBN: </br><input type="text" name="isbn"><br></br>
+			<input type="submit" value="Crea"/>
+		</form>
+        <!--ELIMINACIÓ-->
+        <form class= 'formulari' action="./eliminacioL.php" method="POST">
+        <p>Eliminació</p>
+			ISBN: </br><input type="text" name="id"><br>
 			<input type="submit" value="Crea"/>
 		</form>
     </body>
