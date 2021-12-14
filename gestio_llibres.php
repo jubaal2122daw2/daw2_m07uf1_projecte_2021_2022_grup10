@@ -61,11 +61,13 @@
 			ISBN: </br><input type="text" name="isbn"><br></br>
 			<input type="submit" value="Crea"/>
 		</form>
+        
         <!--ELIMINACIÓ-->
         <form class= 'formulari' action="./eliminacioL.php" method="POST">
+            <input type="hidden" name="metode" value="DELETE" />
         <p>Eliminació</p>
-			ISBN: </br><input type="text" name="id"><br>
-			<input type="submit" value="Crea"/>
+			ISBN: </br><input type="text" name="isbn"><br>
+			<input type="submit" value="Elimina"/>
 		</form>
     </body>
 </html>

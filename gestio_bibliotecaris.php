@@ -44,9 +44,11 @@
             $fitxer = fopen($biblio_file,"r") or die ("No s'ha pogut crear fitxer");
             if($fitxer !==FALSE){
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
-                $biblio = new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
-                echo $biblio -> verInfo();
-                $bibliotecaris[] = $biblio;
+                if($datos[9]!=='1'){
+                    $biblio = new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
+                    echo $biblio -> verInfo();
+                    $bibliotecaris[] = $biblio;
+                }
             }
             fclose($fitxer);
             }
@@ -67,11 +69,13 @@
             Salari: </br><input type="text" name="salari"><br></br>
 			<input type="submit" value="Crea"/>
 		</form>
+
         <!--ELIMINACIÓ-->
         <form class= 'formulari' action="./eliminacioB.php" method="POST">
+            <input type="hidden" name="metode" value="DELETE" />
         <p>Eliminació</p>
 			ID: </br><input type="text" name="id"><br>
-			<input type="submit" value="Crea"/>
+			<input type="submit" value="Elimina"/>
 		</form>
         
         
