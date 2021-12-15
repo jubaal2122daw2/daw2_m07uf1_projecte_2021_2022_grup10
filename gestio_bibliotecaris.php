@@ -77,6 +77,20 @@
 			ID: </br><input type="text" name="id"><br>
 			<input type="submit" value="Elimina"/>
 		</form>
+
+        <!--MODIFICACIÓ-->
+        <form class= 'formulari' action="./modificacioB.php" method="POST"> <!--crear php-->
+            <input type="hidden" name="metode" value="PUT" />
+        <p>Modificació</p>
+			ID: </br><input type="text" name="id"><br><br>
+            Salari: </br><input type="text" name="salari"><br><br>
+            <!-- <label>Cap?</label><br>
+            <input type="radio" name="estat_prestat" value="si">
+            <label id="Si">Si</label>
+            <input type="radio" name="estat_prestat" value="no">
+            <label id="No">No</label><br><br> -->
+			<input type="submit" value="Modifica"/>
+		</form>
         
         
     </body>
