@@ -78,16 +78,16 @@
 		</form>
 
         <!--MODIFICACIÓ-->
-        <form class= 'formulari' action="./modificacioU.php" method="POST"> <!--crear php-->
+        <form class= 'formulari' action="./modificacioU.php" method="POST">
             <input type="hidden" name="metode" value="PUT" />
         <p>Modificació</p>
 			ID: </br><input type="text" name="id"><br><br>
-            <label>Prestat?</label><br>
-            <input type="radio" name="estat_prestat" value="si">
-            <label id="Si">Si</label>
-            <input type="radio" name="estat_prestat" value="no">
-            <label id="No">No</label><br><br>
-            ISBN: </br><input type="text" name="id"><br><br>
+            <label>Llibre Prestat?</label><br>
+            <input type="radio" name="estat_prestat" value="S">
+            <label id="S">S</label>
+            <input type="radio" name="estat_prestat" value="N"checked>
+            <label id="N">N</label><br><br>
+            ISBN: </br><input type="text" name="isbn"><br><br>
             Data d'Inici: </br><input type="date" name="d_inici"><br><br>
 			<input type="submit" value="Modifica"/>
 		</form>

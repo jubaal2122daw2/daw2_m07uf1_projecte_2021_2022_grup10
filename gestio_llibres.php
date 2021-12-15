@@ -69,5 +69,20 @@
 			ISBN: </br><input type="text" name="isbn"><br>
 			<input type="submit" value="Elimina"/>
 		</form>
+
+        <!--MODIFICACIÓ-->
+        <form class= 'formulari' action="./modificacioL.php" method="POST">
+            <input type="hidden" name="metode" value="PUT" />
+        <p>Modificació</p>
+            ISBN: </br><input type="text" name="isbn"><br><br>
+            <label>Prestat?</label><br>
+            <input type="radio" name="estat_prestat" value="S">
+            <label id="S">S</label>
+            <input type="radio" name="estat_prestat" value="N"checked>
+            <label id="N">N</label><br><br>
+            ID: </br><input type="text" name="id"><br><br>
+            Data d'Inici: </br><input type="date" name="d_inici"><br><br>
+			<input type="submit" value="Modifica"/>
+		</form>
     </body>
 </html>

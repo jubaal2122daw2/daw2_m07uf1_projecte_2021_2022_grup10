@@ -35,7 +35,7 @@
                 <th>sSocial</th>
                 <th>Data de contracte</th>
                 <th>Salari</th>
-                <th>Cap</th>
+                <th>Cap(S/N)</th>
             </tr> 
         
         <?php
@@ -44,7 +44,7 @@
             $fitxer = fopen($biblio_file,"r") or die ("No s'ha pogut crear fitxer");
             if($fitxer !==FALSE){
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
-                if($datos[9]!=='1'){
+                if($datos[9]!=='1'&& $datos[9]!=='S'){ //mirar si lo cambiamos o no
                     $biblio = new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
                     echo $biblio -> verInfo();
                     $bibliotecaris[] = $biblio;
@@ -84,11 +84,11 @@
         <p>Modificació</p>
 			ID: </br><input type="text" name="id"><br><br>
             Salari: </br><input type="text" name="salari"><br><br>
-            <!-- <label>Cap?</label><br>
-            <input type="radio" name="estat_prestat" value="si">
-            <label id="Si">Si</label>
-            <input type="radio" name="estat_prestat" value="no">
-            <label id="No">No</label><br><br> -->
+            <label>Cap?</label><br>
+            <input type="radio" name="estat_cap" value="S">
+            <label id="S">S</label>
+            <input type="radio" name="estat_cap" value="N" checked>
+            <label id="N">N</label><br><br>
 			<input type="submit" value="Modifica"/>
 		</form>
         
