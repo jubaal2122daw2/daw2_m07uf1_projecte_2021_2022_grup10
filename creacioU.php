@@ -1,4 +1,3 @@
-
 <?php
 /* pasamos los datos al fichero usuarios*/
 $datosU = fopen("ficheros/usuaris.csv", "a") or die("Unable to open file!");

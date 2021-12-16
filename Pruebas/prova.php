@@ -1,25 +1,25 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php 
+$fitxer_usuaris="usuari";
+$fp=fopen($fitxer_usuaris,"r") or die ("No s'ha pogut validar l'usuari");
 
-	if( $_POST["metode"] == "PUT" ){
-        $biblio_file = "./ficheros/bibliotecaris.csv";
-        $temporal = tempnam(".", "tmp");
-            $fitxer = fopen($biblio_file,"r") or die ("No s'ha pogut crear fitxer");
-            $f_temp = fopen($temporal ,"w") or die ("No s'ha pogut modificar fitxer");
-            $bibliotecaris = array();
-            if($fitxer !==FALSE){
-                while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
-                    if($datos[4]==$_POST['id']){
-                        $datos[8] == $_POST["salari"];
-                        // $datos[9] == $_POST[];
-                    }
-                    fputcsv($f_temp,$datos);
-                }
-            }
-                fclose($fitxer);
-                fclose($f_temp);
+if ($fp) {
+    $mida_fitxer=filesize($fitxer_usuaris);    
+    $usuaris = explode(PHP_EOL, fread($fp,$mida_fitxer));
+}
+   foreach ($usuaris as $usuari) {
+    $logpwd = explode(":",$usuari);
+   }
+   
 
-                unlink($biblio_file);
-                rename($temporal,$biblio_file);
-        }
-    header('Location: gestio_bibliotecaris.php')
 ?>
+</body>
+</html>

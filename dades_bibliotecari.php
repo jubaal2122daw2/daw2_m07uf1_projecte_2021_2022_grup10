@@ -21,7 +21,9 @@
     <form action='./sessio_u.php' method='GET'>
         <input type='submit' value='Enrere'>
     </form>
-    <table class='taula'>
+    <?php 
+    $dompdf_tmp = "
+        <table class='taula'>
         <tr>
             <th>Nom</th>
             <th>Adreça</th>
@@ -34,8 +36,17 @@
             <th>Salari</th>
             <th>Cap (S/N)</th>
         </tr>
-        <?php echo $_SESSION['check_biblio']->verInfo(); ?>
-    </table>
+        ";
+        $dompdf_tmp .= $_SESSION['check_biblio']->verInfo(); 
+        $dompdf_tmp .= "</table>";
+        $_SESSION["dompdf"] = $dompdf_tmp;
+        echo $dompdf_tmp;
+    ?>
+        <br><br>
+        <form class="pdf" action="./crear_pdf.php" method="GET">
+            <input type="hidden" name="file" value="pdf">
+            <input type="submit" value="Generar PDF">
+        </form> 
 </body>
 
 </html>
