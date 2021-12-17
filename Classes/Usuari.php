@@ -15,7 +15,13 @@ class Usuari extends Persona{
         $this->prestat = $prestat;
         $this->isbn_prestat = $isbn_prestat;
         $this->data_prestec = $data_prestec;
-        }
+    }
+
+    public function __destruct()
+    {
+        echo "(Objecte lliberat amb èxit.)";
+        //mirar de hacer csv de logs.
+    }
 
         public function verInfo(){
             return"
