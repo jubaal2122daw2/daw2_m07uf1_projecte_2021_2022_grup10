@@ -28,6 +28,8 @@
         <form action='sessio_u.php' method='GET'>
             <input type='submit' value='Enrere'>
         </form>
+        <?php
+        $dompdf_tmp = "
         <table class='taula'>
             <tr>
                 <th>Nom</th>
@@ -40,22 +42,27 @@
                 <th>ISBN</th>
                 <th>Data Prèstec</th>
             </tr> 
+            ";
         
-        <?php
-            //$usuaris = array();
             $user_file = "./ficheros/usuaris.csv";
             $fitxer = fopen($user_file,"r") or die ("No s'ha pogut crear fitxer");
             if($fitxer !==FALSE){
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
                 $user = new Usuari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8]);
-                echo $user -> verInfo();
-                //$usuaris[] = $user;     
+                $dompdf_tmp .= $user -> verInfo();    
             }
             fclose($fitxer);
             }
+            $dompdf_tmp .= "</table>";
+            $_SESSION["dompdf"] = $dompdf_tmp;
+            echo $dompdf_tmp;
         ?>
-        </table>
         </br>
+        <form class="pdf" action="./crear_pdf.php" method="GET">
+            <input type="hidden" name="file" value="pdf">
+            <input type="submit" value="Generar PDF">
+        </form> 
+        
         <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioU.php" method="POST">
         <p>Creació</p>

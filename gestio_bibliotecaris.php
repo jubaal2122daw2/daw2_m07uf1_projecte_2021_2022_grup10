@@ -24,21 +24,23 @@
         <form action='sessio_u.php' method='GET'>
             <input type='submit' value='Enrere'>
         </form>
-        <table class='taula'>
-            <tr>
-                <th>Nom</th>
-                <th>Adreça</th>
-                <th>Email</th>
-                <th>Telèfon</th>
-                <th>ID</th>
-                <th>Contrasenya</th>
-                <th>sSocial</th>
-                <th>Data de contracte</th>
-                <th>Salari</th>
-                <th>Cap(S/N)</th>
-            </tr> 
-        
         <?php
+            $dompdf_tmp = "
+            <table class='taula'>
+                <tr>
+                    <th>Nom</th>
+                    <th>Adreça</th>
+                    <th>Email</th>
+                    <th>Telèfon</th>
+                    <th>ID</th>
+                    <th>Contrasenya</th>
+                    <th>sSocial</th>
+                    <th>Data de contracte</th>
+                    <th>Salari</th>
+                    <th>Cap(S/N)</th>
+                </tr> 
+            ";
+        
             $bibliotecaris = array();
             $biblio_file = "./ficheros/bibliotecaris.csv";
             $fitxer = fopen($biblio_file,"r") or die ("No s'ha pogut crear fitxer");
@@ -46,14 +48,22 @@
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
                 if($datos[9]!=='1'&& $datos[9]!=='S'){ //mirar si lo cambiamos o no
                     $biblio = new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
-                    echo $biblio -> verInfo();
+                    $dompdf_tmp .= $biblio -> verInfo();
                     $bibliotecaris[] = $biblio;
                 }
             }
             fclose($fitxer);
             }
+            $dompdf_tmp .= "</table>";
+            $_SESSION["dompdf"] = $dompdf_tmp;
+            echo $dompdf_tmp;
         ?>
-        </table></br>
+        <br>
+        <form class="pdf" action="./crear_pdf.php" method="GET">
+            <input type="hidden" name="file" value="pdf">
+            <input type="submit" value="Generar PDF">
+        </form>
+        </br>
         <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioB.php" method="POST">
         <p>Creació</p>

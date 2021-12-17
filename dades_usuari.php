@@ -40,7 +40,7 @@
             $_SESSION["dompdf"] = $dompdf_tmp;
             echo $dompdf_tmp;
         ?>
-        <br><br>
+        <br>
         <form class="pdf" action="./crear_pdf.php" method="GET">
             <input type="hidden" name="file" value="pdf">
             <input type="submit" value="Generar PDF">
