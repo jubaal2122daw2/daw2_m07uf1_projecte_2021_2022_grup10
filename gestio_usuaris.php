@@ -71,7 +71,7 @@
 			Direcció:</br> <input type="text" name="direccio" required><br>
 			Direcció E-mail:</br> <input type="text" name="email" required><br>
 			Teléfon: </br><input type="tel" name="telefon" required><br>
-			ID usuari: </br><input type="text" name="id" required>U<br>
+			ID usuari: </br><input type="text" name="id" required><br>
 			Contrasenya:</br> <input type="password" name="ctsnya" required><br><br>
 			<input type="submit" value="Crea"/>
 		</form>

@@ -20,6 +20,11 @@ class Bibliotecari extends Persona{
         $this->cap = $cap;
     }
 
+    public function __destruct()
+    {
+        error_log("Bibliotecari alliberat amb èxit",0);
+    }
+
     public function verInfo(){
         return"
             <tr>

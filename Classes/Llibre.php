@@ -16,6 +16,10 @@ class Llibre{
         $this->data_prestecL = $data_prestecL;
         $this->id_usuari = $id_usuari;
     }
+    public function __destruct()
+    {
+        error_log("Llibre alliberat amb èxit",0);
+    }
 
     public function verInfoLibro(){
         return"

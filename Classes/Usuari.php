@@ -19,9 +19,7 @@ class Usuari extends Persona{
 
     public function __destruct()
     {
-        $log = fopen("ficheros/logs.csv", "a") or die("Unable to open file!");
-        fwrite($log,"Usuari lliberat amb exit".PHP_EOL);
-        
+        error_log("Usuari alliberat amb èxit",0);
     }
 
         public function verInfo(){
