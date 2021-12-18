@@ -1,14 +1,23 @@
+<!--Primera modificació per fer usuaris-->
 <html>
 	<head>
 		<title>
-			FORMULARI PER ACCEDIR A LA SESSIÓ
+			BIBLIOTECA TERRA ALTA
 		</title>
+		<link href='style.css'rel='stylesheet' type='text/css'>
+	</head>
 		<body>
-			<form action="http://localhost/sessio9/sess_usr/sessio.php" method="POST">
-				Indica el el nom d'usuari: <input type="text" name="usuari"><br>
-				Indica la contrasenya: <input type="password" name="ctsnya"><br>
+			<form class="login" action="./sessio_u.php" method="POST">
+				<label for="fname">Indica el nom d'usuari:</label><br>
+				<input type="text" name="usuari"><br>
+				<label for="fname">Indica la contrasenya:</label><br>
+				<input type="password" name="ctsnya"><br>
+				<select name="tipusUser">
+					<option value="Bibliotecari">Bibliotecari</option>
+					<option value="Admin">Admin</option>
+					<option value="Usuari">Client</option>
+				</select>
 				<input type="submit" value="Envia"/>
 			</form>
 		</body>
-	</head>
 </html>

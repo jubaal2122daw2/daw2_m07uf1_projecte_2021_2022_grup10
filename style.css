@@ -1,4 +1,66 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(160, 133, 107);
+}
+
 .formulari{
-    border-color: black;
-    margin:auto ;
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 6px;
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+    width: 25%;
+}
+p{
+    font-size: 24px;
+}
+.login{
+    width: min-content;
+    height: auto;
+    margin-left: 40%;
+    margin-right: 35%;
+    margin-top: 15%;
+    padding: 40px;
+    background-color: rgb(240, 214, 166);
+}
+
+.lateral{
+    float:right;
+    background-color: #f5c87a;
+    padding: 5px;
+    line-height: 2;
+    height: min-content;
+    color: black;
+}
+
+.taula {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+
+a{
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 6px;
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+}
+div{
+    text-decoration: none;
+    border: 2px solid orange;
+    padding: 6px;
+    background-color: white;
+    color: orange;
+    font-weight: bold;  
 }
