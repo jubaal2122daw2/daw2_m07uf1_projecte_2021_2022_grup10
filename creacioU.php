@@ -17,7 +17,7 @@ fwrite($datosU,"U");
 fwrite($datosU, ",");
 fwrite($datosU,$_POST['ctsnya']);
 fwrite($datosU, ",");
-fwrite($datosU, "0");
+fwrite($datosU, "N");
 fwrite($datosU, ",");
 fwrite($datosU, "0");
 fwrite($datosU, ",");

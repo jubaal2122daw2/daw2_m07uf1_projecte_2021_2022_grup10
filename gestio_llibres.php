@@ -65,9 +65,9 @@
         <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioL.php" method="POST">
         <p>Creació</p>
-			Titol:</br><input type="text" name="titol"><br>
-			Autor:</br><input type="text" name="autor"><br>
-			ISBN: </br><input type="text" name="isbn"><br></br>
+			Titol:</br><input type="text" name="titol" required><br>
+			Autor:</br><input type="text" name="autor" required><br>
+			ISBN: </br><input type="text" name="isbn" required><br></br>
 			<input type="submit" value="Crea"/>
 		</form>
         

@@ -66,13 +66,13 @@
         <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioU.php" method="POST">
         <p>Creació</p>
-			Nom: </br><input type="text" name="nom"><br>
-			Cognom:</br> <input type="text" name="cognom"><br>
-			Direcció:</br> <input type="text" name="direccio"><br>
-			Direcció E-mail:</br> <input type="text" name="email"><br>
-			Teléfon: </br><input type="tel" name="telefon"><br>
-			ID usuari: </br><input type="text" name="id"><br>
-			Contrasenya:</br> <input type="password" name="ctsnya"><br><br>
+			Nom: </br><input type="text" name="nom" required><br>
+			Cognom:</br> <input type="text" name="cognom" required><br>
+			Direcció:</br> <input type="text" name="direccio" required><br>
+			Direcció E-mail:</br> <input type="text" name="email" required><br>
+			Teléfon: </br><input type="tel" name="telefon" required><br>
+			ID usuari: </br><input type="text" name="id" required>U<br>
+			Contrasenya:</br> <input type="password" name="ctsnya" required><br><br>
 			<input type="submit" value="Crea"/>
 		</form>
         

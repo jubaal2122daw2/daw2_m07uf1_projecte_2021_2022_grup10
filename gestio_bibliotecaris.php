@@ -67,16 +67,17 @@
         <!--CREACIÓ-->
         <form class= 'formulari' action="./creacioB.php" method="POST">
         <p>Creació</p>
-			Nom:</br><input type="text" name="nom"><br>
-			Cognom: </br><input type="text" name="cognom"><br>
-			Direcció: </br><input type="text" name="direccio"><br>
-			Direcció E-mail: </br><input type="text" name="email"><br>
-			Teléfon: </br><input type="tel" name="telefon"><br>
-			ID: </br><input type="text" name="id"><br>
-			Contrasenya: </br><input type="password" name="ctsnya"><br>
-            Número seguretat social: </br><input type="text" name="social"><br>
-            Data de contracte: </br><input type="date" name="contracte"><br>
-            Salari: </br><input type="text" name="salari"><br></br>
+			Nom:</br><input type="text" name="nom" required><br>
+			Cognom: </br><input type="text" name="cognom" required><br>
+			Direcció: </br><input type="text" name="direccio" required><br>
+			Direcció E-mail: </br><input type="text" name="email" required><br>
+			Teléfon: </br><input type="tel" name="telefon" required><br>
+			ID: </br><input type="text" name="id" required>B<br>
+			Contrasenya: </br><input type="password" name="ctsnya" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,}$" required><br>
+            (Com a mínim 8 caràcters aleatoris, amb minúscules, majúscules, números i caràcters especials)<br><br>
+            Número seguretat social: </br><input type="text" name="social" required><br>
+            Data de contracte: </br><input type="date" name="contracte" required><br>
+            Salari: </br><input type="text" name="salari" required><br></br>
 			<input type="submit" value="Crea"/>
 		</form>
 
