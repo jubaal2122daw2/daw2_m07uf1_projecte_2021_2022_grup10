@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '02b061f43b3d2b10d080a28cae453ab88e82b0dd',
+        'reference' => '863d597a503605396d18db55d631eb63bf05ec54',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '02b061f43b3d2b10d080a28cae453ab88e82b0dd',
+            'reference' => '863d597a503605396d18db55d631eb63bf05ec54',
             'dev_requirement' => false,
         ),
         'dompdf/dompdf' => array(
@@ -29,12 +29,12 @@
             'dev_requirement' => false,
         ),
         'phenx/php-font-lib' => array(
-            'pretty_version' => '0.5.2',
-            'version' => '0.5.2.0',
+            'pretty_version' => '0.5.4',
+            'version' => '0.5.4.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phenx/php-font-lib',
             'aliases' => array(),
-            'reference' => 'ca6ad461f032145fff5971b5985e5af9e7fa88d8',
+            'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
             'dev_requirement' => false,
         ),
         'phenx/php-svg-lib' => array(
