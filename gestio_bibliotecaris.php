@@ -46,11 +46,11 @@
             $fitxer = fopen($biblio_file,"r") or die ("No s'ha pogut crear fitxer");
             if($fitxer !==FALSE){
             while (($datos = fgetcsv($fitxer,0,",")) !== FALSE){
-                if($datos[9]!=='1'&& $datos[9]!=='S'){ //mirar si lo cambiamos o no
+                // if($datos[9]!=='1'&& $datos[9]!=='S'){ //mirar si lo cambiamos o no
                     $biblio = new Bibliotecari($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5],$datos[6],$datos[7],$datos[8],$datos[9]);
                     $dompdf_tmp .= $biblio -> verInfo();
                     $bibliotecaris[] = $biblio;
-                }
+                //}
             }
             fclose($fitxer);
             }
